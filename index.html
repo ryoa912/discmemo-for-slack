@@ -36,18 +36,18 @@
 	<h3>１．ここに議事メモを入力してください。Input your discussion memo.</h3>
 	<div class = "row">
 		<div class="col-xs-12"><label>テキスト入力</label></div>
-		<div class="col-xs-9"><input type="text" class="form-control" id="pepperIP" value="こちらにコピー＆ペーストしてください。" /></div>
+		<div class="col-xs-9"><textarea rows="5" class="form-control" id="input_textbox"></textarea></div>
 	</div>
 
 	<h3>２．議事メモ作成ボタンを押してください。Push the button.</h3>
 	<div class = "row">
-		<div class="col-xs-6"><button onclick="sleepSwitch(true)" class="btn btn-primary behavior-btn">議事メモ作成</button></div>
+		<div class="col-xs-6"><button onclick="sleepSwitch(true)" class="btn btn-primary behavior-btn" id="create_button">議事メモ作成</button></div>
 	</div>
 
 	<h3>３．出力結果がこちらのテキストボックスに表示されます。To output the result below.</h3>
 	<div class = "row">
 		<div class="col-xs-12">出力結果</div>
-		<div class="col-xs-9"><input type="text" class="form-control" id="pepperVolume" value="出力結果..." /></div>
+		<div class="col-xs-9"><textarea rows="5" class="form-control" id="output_textbox"></textarea></div>
 	</div>
 
 </section>
