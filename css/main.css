@@ -157,3 +157,7 @@ html{
   min-width: 100px;
   margin-top: 5px;
 }
+
+.main-frame {
+  margin-top: 15px;
+}
