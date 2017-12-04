@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<title>議事メモめーかー for Slack</title>
+<link rel="icon" href="img/favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="libs/qimessaging/1.0/qimessaging.js"></script>
+<script type="text/javascript" src="libs/qimessaging/1.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/control.js"></script>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/starter-template.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">議事メモめーかー for Slack</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+<section class = "container">
+
+	<h3>１．ここに議事メモを入力してください。Input your discussion memo.</h3>
+	<div class = "row connectedState">
+		<div class="connected col-xs-9" style="color:red"><span class="connectedText">未接続</span><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></div>
+	</div>
+	<div class = "row">
+		<div class="col-xs-12"><label>Pepper の IPアドレス</label></div>
+		<div class="col-xs-9"><input type="text" class="form-control" id="pepperIP" value="192.168.0.1" /></div>
+		<div class="col-xs-2"><button onclick="connect()" class="btn btn-primary">接続</button></div>
+	</div>
+
+	<h3>２．議事メモ作成ボタンを押してください。Push the button.</h3>
+	<div class = "row">
+		<div class="col-xs-12">現在の起動状態：<label id="sleepMode">Waiting...</label></div>
+		<div class="col-xs-6"><button onclick="sleepSwitch(false)" class="btn btn-danger behavior-btn">Sleep</button></div>
+		<div class="col-xs-6"><button onclick="sleepSwitch(true)" class="btn btn-primary behavior-btn">Wake up</button></div>
+	</div>
+
+	<h3>３．出力結果</h3>
+	<div class = "row">
+		<div class="col-xs-12">現在の音量</div>
+		<div class="col-xs-9"><input type="text" class="form-control" id="pepperVolume" value="Waiting..." /></div>
+		<div class="col-xs-2"><button onclick="changeAudioVolume()" class="btn btn-primary">音量変更</button></div>
+	</div>
+
+</section>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<p class="text-muted">Presented by R.A (Application ver.0.0.1)</p>
+	</div>
+</footer>
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
