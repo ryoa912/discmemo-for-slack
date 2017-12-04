@@ -34,27 +34,20 @@
 <section class = "container">
 
 	<h3>１．ここに議事メモを入力してください。Input your discussion memo.</h3>
-	<div class = "row connectedState">
-		<div class="connected col-xs-9" style="color:red"><span class="connectedText">未接続</span><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></div>
-	</div>
 	<div class = "row">
-		<div class="col-xs-12"><label>Pepper の IPアドレス</label></div>
-		<div class="col-xs-9"><input type="text" class="form-control" id="pepperIP" value="192.168.0.1" /></div>
-		<div class="col-xs-2"><button onclick="connect()" class="btn btn-primary">接続</button></div>
+		<div class="col-xs-12"><label>テキスト入力</label></div>
+		<div class="col-xs-9"><input type="text" class="form-control" id="pepperIP" value="こちらにコピー＆ペーストしてください。" /></div>
 	</div>
 
 	<h3>２．議事メモ作成ボタンを押してください。Push the button.</h3>
 	<div class = "row">
-		<div class="col-xs-12">現在の起動状態：<label id="sleepMode">Waiting...</label></div>
-		<div class="col-xs-6"><button onclick="sleepSwitch(false)" class="btn btn-danger behavior-btn">Sleep</button></div>
-		<div class="col-xs-6"><button onclick="sleepSwitch(true)" class="btn btn-primary behavior-btn">Wake up</button></div>
+		<div class="col-xs-6"><button onclick="sleepSwitch(true)" class="btn btn-primary behavior-btn">議事メモ作成</button></div>
 	</div>
 
-	<h3>３．出力結果</h3>
+	<h3>３．出力結果がこちらのテキストボックスに表示されます。To output the result below.</h3>
 	<div class = "row">
-		<div class="col-xs-12">現在の音量</div>
-		<div class="col-xs-9"><input type="text" class="form-control" id="pepperVolume" value="Waiting..." /></div>
-		<div class="col-xs-2"><button onclick="changeAudioVolume()" class="btn btn-primary">音量変更</button></div>
+		<div class="col-xs-12">出力結果</div>
+		<div class="col-xs-9"><input type="text" class="form-control" id="pepperVolume" value="出力結果..." /></div>
 	</div>
 
 </section>
