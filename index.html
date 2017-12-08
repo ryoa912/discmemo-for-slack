@@ -22,14 +22,14 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">議事メモめーかー for Slack</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-    </div>
   </div>
 </nav>
 
 <div class="main-frame">
-	<label class="col-sm-2 control-label" for="InputEmail">入力</label>
-	<div class="col-sm-10">
+	<div class="container">
+		<div class="navbar-header">
+				<a class="navbar-brand">１．入力</a>
+		</div>
 		<textarea rows="7" class="form-control" id="input_textbox" placeholder="入力"></textarea>
 	</div>
 	<div class="col-sm-offset-2 col-sm-10">
@@ -54,12 +54,17 @@
 			</label>
 		</div>
 	</div>
+	
 	<div class="col-sm-offset-2 col-sm-10">
 		<button onclick="create()" class="btn btn-primary behavior-btn" id="create_button">↓議事メモ作成</button>
 	</div>
-	<label class="col-sm-2 control-label" for="InputPassword">出力</label>
-	<div class="col-sm-10">
-		<textarea rows="7" class="form-control" id="output_textbox" readonly placeholder="出力"></textarea>
+
+
+	<div class="container">
+		<div class="navbar-header">
+				<a class="navbar-brand">２．出力</a>
+		</div>
+		<textarea rows="7" class="form-control" id="output_textbox" placeholder="出力"></textarea>
 	</div>
 </div>
 <div>　</div>
