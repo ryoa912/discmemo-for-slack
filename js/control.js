@@ -36,6 +36,7 @@ function deleteDateWords(val){
 
 function deleteEditedWords(val){
     var text = val;
+    text = text.replace( /\（編集済み\）/g , "" );
     return text.replace( /\(edited\)/g , "" );
 }
 
