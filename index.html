@@ -31,6 +31,7 @@
 				<a class="navbar-brand">１．入力</a>
 		</div>
 		<textarea rows="7" class="form-control" id="input_textbox" placeholder="入力"></textarea>
+
 		<div class="checkbox">
 			<label>
 				<input type="checkbox" id="checkbox_name" checked> 書き込み名 を消す
@@ -54,15 +55,25 @@
 		<button onclick="create()" class="btn btn-primary behavior-btn" id="create_button">↓議事メモ作成</button>
 	</div>
 
-
 	<div class="container">
 		<div class="navbar-header">
 				<a class="navbar-brand">２．出力</a>
 		</div>
 		<textarea rows="7" class="form-control" id="output_textbox" placeholder="出力"></textarea>
 		<br>
-		<div>※注意事項</div>
-		<div>・「[ ]」の文字を使わないでください。（議事メモ作成時に消えます。）</div>
+
+		<div class="page-header">
+			<div>※注意事項</div>
+		</div>
+		<ul>
+		<li>「[ ]」の文字を使わないでください。（議事メモ作成時に消えます。）</li>
+		</ul>
+		<br>
+
+		<div class="page-header">
+			<div>※新機能追加、バグ報告はこちら</div>
+		</div>
+		<div><a href="https://github.com/ryoa912/discmemo-for-slack/issues">https://github.com/ryoa912/discmemo-for-slack/issues<a></div>
 	</div>
 </div>
 
