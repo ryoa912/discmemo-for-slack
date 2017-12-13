@@ -25,8 +25,7 @@ function create(){
 
 function deleteNames(val){    
     var text = val;
-    text = text.replace( /\n(.+)\[/g , "[" );
-    return text.replace( /\n(.+)\n\[/g, "[");
+    return text.replace( /(\n+)(.+)\[/g , "[" );
 }
 
 function deleteDateWords(val){
