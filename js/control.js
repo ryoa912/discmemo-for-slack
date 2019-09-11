@@ -35,6 +35,8 @@ function deleteDateWords(val){
 
 function deleteEditedWords(val){
     var text = val;
+    text = text.replace( /メンバー/g , "" );
+    text = text.replace( /所有者/g , "" );
     text = text.replace( /\（編集済み\）/g , "" );
     return text.replace( /\(edited\)/g , "" );
 }
