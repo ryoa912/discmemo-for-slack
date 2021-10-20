@@ -2,90 +2,110 @@
 <html lang="ja">
 
 <head>
-<title>議事メモめーかー for Slack</title>
-<link rel="icon" href="img/favicon.ico">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>議事メモめーかー for Slack</title>
+	<link rel="icon" href="img/favicon.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<script type="text/javascript" src="js/control.js"></script>
+	<script type="text/javascript" src="js/control.js"></script>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/starter-template.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/starter-template.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-		<a class="navbar-brand" href="#"><span><img src="img/favicon.ico" height="24" style="margin-right:6px;"></img>議事メモめーかー for Slack</span></a>
-    </div>
-  </div>
-</nav>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><span><img src="img/favicon.ico" height="24"
+							style="margin-right:6px;"></img>議事メモめーかー for Slack</span></a>
+			</div>
+		</div>
+	</nav>
 
-<div class="main-frame">
-	<div class="container">
-		<div class="navbar-header">
+	<div class="main-frame">
+		<div class="container">
+			<div class="navbar-header">
 				<a class="navbar-brand">１．入力</a>
-		</div>
-		<textarea rows="7" class="form-control" id="input_textbox" placeholder="入力"></textarea>
+			</div>
+			<textarea rows="7" class="form-control" id="input_textbox" placeholder="入力"></textarea>
 
-		<div class="checkbox">
-			<label>
-				<input type="checkbox" id="checkbox_name" checked> 書き込み名 を消す
-			</label>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="checkbox_name" checked> 書き込み名 を消す
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="checkbox_date" checked> 書き込み時間 を消す（[ ]で囲まれた文字列）
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="checkbox_edited" checked> (edited) および（編集済み）を消す
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="checkbox_br" checked> 連続した改行 を単一の改行にする
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="checkbox_teams"> Teamsのメンバー一覧から名前だけ残す
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="checkbox_del_row" checked> 指定した行間隔で特定の行を削除する
+				</label>
+            </div>
+            <div>
+                行間隔<input type="number" id="row_interval" value="2">
+                行番号<input type="number" id="row_number" value="1">
+            </div>
+			<button onclick="create()" class="btn btn-primary behavior-btn" id="create_button">↓議事メモ作成</button>
+			<button onclick="reverse()" class="btn btn-secondary behavior-btn" id="reverse_button">↑入力に反映</button>
 		</div>
-		<div class="checkbox">
-			<label>
-				<input type="checkbox" id="checkbox_date" checked> 書き込み時間 を消す（[ ]で囲まれた文字列）
-			</label>
-		</div>
-		<div class="checkbox">
-			<label>
-				<input type="checkbox" id="checkbox_edited" checked> (edited) および（編集済み）を消す
-			</label>
-		</div>
-		<div class="checkbox">
-			<label>
-				<input type="checkbox" id="checkbox_br" checked> 連続した改行 を単一の改行にする
-			</label>
-		</div>
-		<button onclick="create()" class="btn btn-primary behavior-btn" id="create_button">↓議事メモ作成</button>
-	</div>
 
-	<div class="container">
-		<div class="navbar-header">
+		<div class="container">
+			<div class="navbar-header">
 				<a class="navbar-brand">２．出力</a>
-		</div>
-		<textarea rows="7" class="form-control" id="output_textbox" placeholder="出力"></textarea>
-		<br>
+			</div>
+			<textarea rows="7" class="form-control" id="output_textbox" placeholder="出力"></textarea>
+			<br>
 
-		<div class="page-header">
-			<div>※注意事項</div>
-		</div>
-		<ul>
-		<li>「[ ]」の文字を使わないでください。（議事メモ作成時に消えます。）</li>
-		</ul>
-		<br>
+			<div class="page-header">
+				<div>※注意事項</div>
+			</div>
+			<ul>
+				<li>「[ ]」の文字を使わないでください。（議事メモ作成時に消えます。）</li>
+			</ul>
+			<br>
 
-		<div class="page-header">
-			<div>※バグ報告、新機能追加はこちらからお願いします。</div>
+			<div class="page-header">
+				<div>※バグ報告、新機能追加はこちらからお願いします。</div>
+			</div>
+			<div><a href="https://github.com/ryoa912/discmemo-for-slack/issues">https://github.com/ryoa912/discmemo-for-slack/issues<a>
+			</div>
 		</div>
-		<div><a href="https://github.com/ryoa912/discmemo-for-slack/issues">https://github.com/ryoa912/discmemo-for-slack/issues<a></div>
 	</div>
-</div>
 
-<footer class="footer">
-	<div class="container">
-		<a href="https://github.com/ryoa912/discmemo-for-slack/" aria-label="Homepage" class="footer-octicon" title="GitHub">
-			<img src="img/githubicon.jpg" height="48"></img>
-		</a>
-		<span class="text-muted">Presented by R.A (Powered by <a href="https://github.com/ryoa912/discmemo-for-slack/">GitHub</a>)</span>
-	</div>
-</footer>
+	<footer class="footer">
+		<div class="container">
+			<a href="https://github.com/ryoa912/discmemo-for-slack/" aria-label="Homepage" class="footer-octicon"
+				title="GitHub">
+				<img src="img/githubicon.jpg" height="48"></img>
+			</a>
+			<span class="text-muted">Presented by R.A (Powered by <a
+					href="https://github.com/ryoa912/discmemo-for-slack/">GitHub</a>)</span>
+		</div>
+	</footer>
 
-<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>
